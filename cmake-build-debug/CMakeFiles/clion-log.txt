@@ -1,5 +1,5 @@
-C:\Users\thilo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\thilo\CLionProjects\Asteroids
+C:\Users\thilo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\thilo\CLionProjects\asteroids
 -- Found SFML .. in /SFML/include
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/thilo/CLionProjects/Asteroids/cmake-build-debug
+-- Build files have been written to: C:/Users/thilo/CLionProjects/asteroids/cmake-build-debug

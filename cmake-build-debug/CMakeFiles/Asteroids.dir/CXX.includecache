@@ -10,6 +10,14 @@
 SFMl/Graphics.hpp
 -
 
+../headers/Formulas.h
+SFML/Graphics.hpp
+-
+
+../headers/Player.h
+SFML/Graphics.hpp
+-
+
 C:/SFML/include/SFML/Config.hpp
 TargetConditionals.h
 C:/SFML/include/SFML/TargetConditionals.h
@@ -680,7 +688,13 @@ SFML/Config.hpp
 
 C:/SFML/include/SFML/Window/WindowStyle.hpp
 
-C:/Users/thilo/CLionProjects/Asteroids/src/Engine.cpp
+C:/Users/thilo/CLionProjects/asteroids/src/Engine.cpp
 Engine.h
-C:/Users/thilo/CLionProjects/Asteroids/src/Engine.h
+C:/Users/thilo/CLionProjects/asteroids/src/Engine.h
+Player.h
+C:/Users/thilo/CLionProjects/asteroids/src/Player.h
+Formulas.h
+C:/Users/thilo/CLionProjects/asteroids/src/Formulas.h
+iostream
+-
 

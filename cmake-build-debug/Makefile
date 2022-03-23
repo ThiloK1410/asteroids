@@ -66,10 +66,10 @@ RM = C:\Users\thilo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\thilo\CLionProjects\Asteroids
+CMAKE_SOURCE_DIR = C:\Users\thilo\CLionProjects\asteroids
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -98,9 +98,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug\CMakeFiles C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -168,6 +168,60 @@ src/Engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Engine.cpp.s
 .PHONY : src/Engine.cpp.s
 
+src/Formulas.obj: src/Formulas.cpp.obj
+
+.PHONY : src/Formulas.obj
+
+# target to build an object file
+src/Formulas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj
+.PHONY : src/Formulas.cpp.obj
+
+src/Formulas.i: src/Formulas.cpp.i
+
+.PHONY : src/Formulas.i
+
+# target to preprocess a source file
+src/Formulas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Formulas.cpp.i
+.PHONY : src/Formulas.cpp.i
+
+src/Formulas.s: src/Formulas.cpp.s
+
+.PHONY : src/Formulas.s
+
+# target to generate assembly for a file
+src/Formulas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Formulas.cpp.s
+.PHONY : src/Formulas.cpp.s
+
+src/Player.obj: src/Player.cpp.obj
+
+.PHONY : src/Player.obj
+
+# target to build an object file
+src/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Player.cpp.obj
+.PHONY : src/Player.cpp.obj
+
+src/Player.i: src/Player.cpp.i
+
+.PHONY : src/Player.i
+
+# target to preprocess a source file
+src/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
+
+src/Player.s: src/Player.cpp.s
+
+.PHONY : src/Player.s
+
+# target to generate assembly for a file
+src/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -207,6 +261,12 @@ help:
 	@echo ... src/Engine.obj
 	@echo ... src/Engine.i
 	@echo ... src/Engine.s
+	@echo ... src/Formulas.obj
+	@echo ... src/Formulas.i
+	@echo ... src/Formulas.s
+	@echo ... src/Player.obj
+	@echo ... src/Player.i
+	@echo ... src/Player.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

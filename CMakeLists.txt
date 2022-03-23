@@ -3,7 +3,7 @@ project(Asteroids)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Asteroids src/main.cpp src/Engine.cpp headers/Engine.h)
+add_executable(Asteroids src/main.cpp src/Engine.cpp headers/Engine.h src/Player.cpp headers/Player.h src/Formulas.cpp headers/Formulas.h)
 
 include_directories(headers c:/SFML/include)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
@@ -13,7 +13,7 @@ if (SFML_FOUND)
     target_link_libraries(Asteroids ${SFML_LIBRARIES})
 endif()
 
-file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
+
 
 if(WIN32)
     file(GLOB BINARY_DEP_DLLS "${SFML_INCLUDE_DIR}/../bin/*.dll")

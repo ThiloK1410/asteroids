@@ -61,10 +61,10 @@ RM = C:\Users\thilo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\thilo\CLionProjects\Asteroids
+CMAKE_SOURCE_DIR = C:\Users\thilo\CLionProjects\asteroids
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Asteroids.dir/depend.make
@@ -78,41 +78,73 @@ include CMakeFiles/Asteroids.dir/flags.make
 CMakeFiles/Asteroids.dir/src/main.cpp.obj: CMakeFiles/Asteroids.dir/flags.make
 CMakeFiles/Asteroids.dir/src/main.cpp.obj: CMakeFiles/Asteroids.dir/includes_CXX.rsp
 CMakeFiles/Asteroids.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Asteroids.dir/src/main.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Asteroids.dir\src\main.cpp.obj -c C:\Users\thilo\CLionProjects\Asteroids\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Asteroids.dir/src/main.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Asteroids.dir\src\main.cpp.obj -c C:\Users\thilo\CLionProjects\asteroids\src\main.cpp
 
 CMakeFiles/Asteroids.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Asteroids.dir/src/main.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thilo\CLionProjects\Asteroids\src\main.cpp > CMakeFiles\Asteroids.dir\src\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thilo\CLionProjects\asteroids\src\main.cpp > CMakeFiles\Asteroids.dir\src\main.cpp.i
 
 CMakeFiles/Asteroids.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Asteroids.dir/src/main.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thilo\CLionProjects\Asteroids\src\main.cpp -o CMakeFiles\Asteroids.dir\src\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thilo\CLionProjects\asteroids\src\main.cpp -o CMakeFiles\Asteroids.dir\src\main.cpp.s
 
 CMakeFiles/Asteroids.dir/src/Engine.cpp.obj: CMakeFiles/Asteroids.dir/flags.make
 CMakeFiles/Asteroids.dir/src/Engine.cpp.obj: CMakeFiles/Asteroids.dir/includes_CXX.rsp
 CMakeFiles/Asteroids.dir/src/Engine.cpp.obj: ../src/Engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Asteroids.dir/src/Engine.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Asteroids.dir\src\Engine.cpp.obj -c C:\Users\thilo\CLionProjects\Asteroids\src\Engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Asteroids.dir/src/Engine.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Asteroids.dir\src\Engine.cpp.obj -c C:\Users\thilo\CLionProjects\asteroids\src\Engine.cpp
 
 CMakeFiles/Asteroids.dir/src/Engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Asteroids.dir/src/Engine.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thilo\CLionProjects\Asteroids\src\Engine.cpp > CMakeFiles\Asteroids.dir\src\Engine.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thilo\CLionProjects\asteroids\src\Engine.cpp > CMakeFiles\Asteroids.dir\src\Engine.cpp.i
 
 CMakeFiles/Asteroids.dir/src/Engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Asteroids.dir/src/Engine.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thilo\CLionProjects\Asteroids\src\Engine.cpp -o CMakeFiles\Asteroids.dir\src\Engine.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thilo\CLionProjects\asteroids\src\Engine.cpp -o CMakeFiles\Asteroids.dir\src\Engine.cpp.s
+
+CMakeFiles/Asteroids.dir/src/Player.cpp.obj: CMakeFiles/Asteroids.dir/flags.make
+CMakeFiles/Asteroids.dir/src/Player.cpp.obj: CMakeFiles/Asteroids.dir/includes_CXX.rsp
+CMakeFiles/Asteroids.dir/src/Player.cpp.obj: ../src/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Asteroids.dir/src/Player.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Asteroids.dir\src\Player.cpp.obj -c C:\Users\thilo\CLionProjects\asteroids\src\Player.cpp
+
+CMakeFiles/Asteroids.dir/src/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Asteroids.dir/src/Player.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thilo\CLionProjects\asteroids\src\Player.cpp > CMakeFiles\Asteroids.dir\src\Player.cpp.i
+
+CMakeFiles/Asteroids.dir/src/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Asteroids.dir/src/Player.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thilo\CLionProjects\asteroids\src\Player.cpp -o CMakeFiles\Asteroids.dir\src\Player.cpp.s
+
+CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj: CMakeFiles/Asteroids.dir/flags.make
+CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj: CMakeFiles/Asteroids.dir/includes_CXX.rsp
+CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj: ../src/Formulas.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Asteroids.dir\src\Formulas.cpp.obj -c C:\Users\thilo\CLionProjects\asteroids\src\Formulas.cpp
+
+CMakeFiles/Asteroids.dir/src/Formulas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Asteroids.dir/src/Formulas.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\thilo\CLionProjects\asteroids\src\Formulas.cpp > CMakeFiles\Asteroids.dir\src\Formulas.cpp.i
+
+CMakeFiles/Asteroids.dir/src/Formulas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Asteroids.dir/src/Formulas.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\thilo\CLionProjects\asteroids\src\Formulas.cpp -o CMakeFiles\Asteroids.dir\src\Formulas.cpp.s
 
 # Object files for target Asteroids
 Asteroids_OBJECTS = \
 "CMakeFiles/Asteroids.dir/src/main.cpp.obj" \
-"CMakeFiles/Asteroids.dir/src/Engine.cpp.obj"
+"CMakeFiles/Asteroids.dir/src/Engine.cpp.obj" \
+"CMakeFiles/Asteroids.dir/src/Player.cpp.obj" \
+"CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj"
 
 # External object files for target Asteroids
 Asteroids_EXTERNAL_OBJECTS =
 
 Asteroids.exe: CMakeFiles/Asteroids.dir/src/main.cpp.obj
 Asteroids.exe: CMakeFiles/Asteroids.dir/src/Engine.cpp.obj
+Asteroids.exe: CMakeFiles/Asteroids.dir/src/Player.cpp.obj
+Asteroids.exe: CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj
 Asteroids.exe: CMakeFiles/Asteroids.dir/build.make
 Asteroids.exe: /SFML/lib/libsfml-system-d.a
 Asteroids.exe: /SFML/lib/libsfml-window-d.a
@@ -120,7 +152,7 @@ Asteroids.exe: /SFML/lib/libsfml-graphics-d.a
 Asteroids.exe: CMakeFiles/Asteroids.dir/linklibs.rsp
 Asteroids.exe: CMakeFiles/Asteroids.dir/objects1.rsp
 Asteroids.exe: CMakeFiles/Asteroids.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Asteroids.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Asteroids.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Asteroids.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -133,6 +165,6 @@ CMakeFiles/Asteroids.dir/clean:
 .PHONY : CMakeFiles/Asteroids.dir/clean
 
 CMakeFiles/Asteroids.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\thilo\CLionProjects\Asteroids C:\Users\thilo\CLionProjects\Asteroids C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug C:\Users\thilo\CLionProjects\Asteroids\cmake-build-debug\CMakeFiles\Asteroids.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\thilo\CLionProjects\asteroids C:\Users\thilo\CLionProjects\asteroids C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug C:\Users\thilo\CLionProjects\asteroids\cmake-build-debug\CMakeFiles\Asteroids.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Asteroids.dir/depend
 
