@@ -69,8 +69,11 @@ void Engine::input() {
 }
 
 void Engine::updatePlayer() {
-    float factor = 0.0000000001;
-    sf::Vector2f scaledMovement ={player.getMovement()->x*factor,player.getMovement()->y*factor};
+    sf::Vector2f screen_size = Engine::resolution;
+    sf::Vector2f temp = *player.getMovement();
+    float factor_1 = 0.00000001;
+    float max_speed = 5;
+    sf::Vector2f scaledMovement ={player.getMovement()->x * factor_1, player.getMovement()->y * factor_1};
     if(left) {
         player.rotate(-5);
     }
@@ -85,5 +88,32 @@ void Engine::updatePlayer() {
         sf::Vector2f x = player.getDirection() - scaledMovement;
         *player.getMovement() = *player.getMovement() + x;
     }
+    if(Formulas::getVectorLength(*player.getMovement()) > max_speed){              //holding the speed below max_speed
+        double factor = max_speed / Formulas::getVectorLength(*player.getMovement());
+
+        temp.x = temp.x * factor;
+        temp.y = temp.y * factor;
+        *player.getMovement()=temp;
+    }
+
+    if ( temp.x > screen_size.x ) {
+        temp.x = 0;
+        player.getPosition() = temp;
+    }
+    if ( temp.x < 0 ) {
+        temp.x = screen_size.x;
+        player.getPosition() = temp;
+    }
+    if ( temp.y > screen_size.y ) {
+        temp.y = 0;
+        player.getPosition() = temp;
+    }
+    if ( temp.y < 0 ) {
+        temp.y = screen_size.y;
+        player.getPosition() = temp;
+
+    }
+    for(int i = 0;i<50;i++) std::cout <<"\b";
+    std::cout << "player position : " << player.getPosition().x << "   " << player.getPosition().y ;
     player.setPosition(player.getPosition()+*player.getMovement());
 }
