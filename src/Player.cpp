@@ -35,11 +35,9 @@ direction.y = -cos(getRotation()*M_PI/180);
 float Player::getRotation() {
     return player_shape.getRotation();
 }
-
 sf::Vector2f Player::getDirection() {
     return direction;
 }
-
 void Player::setPosition(sf::Vector2f x) {
     player_shape.setPosition(x);
 }
