@@ -70,7 +70,8 @@ void Engine::input() {
 
 void Engine::updatePlayer() {
     sf::Vector2f screen_size = Engine::resolution;
-    sf::Vector2f temp = *player.getMovement();
+    sf::Vector2f new_movement = *player.getMovement();
+    sf::Vector2f new_position = player.getPosition();
     float factor_1 = 0.00000001;
     float max_speed = 5;
     sf::Vector2f scaledMovement ={player.getMovement()->x * factor_1, player.getMovement()->y * factor_1};
@@ -91,29 +92,25 @@ void Engine::updatePlayer() {
     if(Formulas::getVectorLength(*player.getMovement()) > max_speed){              //holding the speed below max_speed
         double factor = max_speed / Formulas::getVectorLength(*player.getMovement());
 
-        temp.x = temp.x * factor;
-        temp.y = temp.y * factor;
-        *player.getMovement()=temp;
+        new_movement.x = new_movement.x * factor;
+        new_movement.y = new_movement.y * factor;
+        *player.getMovement()=new_movement;
     }
 
-    if ( temp.x > screen_size.x ) {
-        temp.x = 0;
-        player.getPosition() = temp;
+    if ( new_position.x > screen_size.x && new_movement.x > 0) {
+        new_position.x = 0;
     }
-    if ( temp.x < 0 ) {
-        temp.x = screen_size.x;
-        player.getPosition() = temp;
+    if (new_position.x < 0 && new_movement.x < 0 ) {
+        new_position.x = screen_size.x;
     }
-    if ( temp.y > screen_size.y ) {
-        temp.y = 0;
-        player.getPosition() = temp;
+    if (new_position.y > screen_size.y && new_movement.y > 0 ) {
+        new_position.y = 0;
     }
-    if ( temp.y < 0 ) {
-        temp.y = screen_size.y;
-        player.getPosition() = temp;
+    if (new_position.y < 0 && new_movement.y <0) {
+        new_position.y = screen_size.y;
+    }
 
-    }
-    for(int i = 0;i<50;i++) std::cout <<"\b";
-    std::cout << "player position : " << player.getPosition().x << "   " << player.getPosition().y ;
-    player.setPosition(player.getPosition()+*player.getMovement());
+    std::cout << "\r" << "player position : " << player.getPosition().x << "   " << player.getPosition().y ;
+
+    player.setPosition(new_position+new_movement);
 }
