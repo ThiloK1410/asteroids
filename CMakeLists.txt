@@ -3,7 +3,7 @@ project(Asteroids)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Asteroids src/main.cpp src/Engine.cpp headers/Engine.h src/Player.cpp headers/Player.h src/Formulas.cpp headers/Formulas.h)
+add_executable(Asteroids src/main.cpp src/Engine.cpp headers/Engine.h src/Player.cpp headers/Player.h src/Formulas.cpp headers/Formulas.h src/Bolt.cpp headers/Bolt.h)
 
 include_directories(headers c:/SFML/include)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")

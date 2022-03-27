@@ -86,6 +86,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/headers/Bolt.h">
+			<Option target="Asteroids"/>
+		</Unit>
 		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/headers/Engine.h">
 			<Option target="Asteroids"/>
 		</Unit>
@@ -93,6 +96,9 @@
 			<Option target="Asteroids"/>
 		</Unit>
 		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/headers/Player.h">
+			<Option target="Asteroids"/>
+		</Unit>
+		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/src/Bolt.cpp">
 			<Option target="Asteroids"/>
 		</Unit>
 		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/src/Engine.cpp">

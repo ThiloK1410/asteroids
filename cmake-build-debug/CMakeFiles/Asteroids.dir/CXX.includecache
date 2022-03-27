@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../headers/Bolt.h
+SFML/Graphics/ConvexShape.hpp
+-
+
 ../headers/Engine.h
 SFMl/Graphics.hpp
 -
@@ -693,6 +697,8 @@ Engine.h
 C:/Users/thilo/CLionProjects/asteroids/src/Engine.h
 Player.h
 C:/Users/thilo/CLionProjects/asteroids/src/Player.h
+Bolt.h
+C:/Users/thilo/CLionProjects/asteroids/src/Bolt.h
 Formulas.h
 C:/Users/thilo/CLionProjects/asteroids/src/Formulas.h
 iostream

@@ -6,11 +6,11 @@
 
 class Engine {
 private:
-    sf::Vector2f resolution;
+    sf::Clock clock;
     sf::RenderWindow window;
     static const unsigned int FPS = 60;
-    static const sf::Time TimePerFrame;
 public:
+    inline static sf::Vector2f resolution = sf::Vector2f(1000,1000) ;
     Engine();
     void draw();
     void run();

@@ -141,6 +141,33 @@ Asteroids/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/build
 .PHONY : Asteroids/fast
 
+src/Bolt.obj: src/Bolt.cpp.obj
+
+.PHONY : src/Bolt.obj
+
+# target to build an object file
+src/Bolt.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Bolt.cpp.obj
+.PHONY : src/Bolt.cpp.obj
+
+src/Bolt.i: src/Bolt.cpp.i
+
+.PHONY : src/Bolt.i
+
+# target to preprocess a source file
+src/Bolt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Bolt.cpp.i
+.PHONY : src/Bolt.cpp.i
+
+src/Bolt.s: src/Bolt.cpp.s
+
+.PHONY : src/Bolt.s
+
+# target to generate assembly for a file
+src/Bolt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Bolt.cpp.s
+.PHONY : src/Bolt.cpp.s
+
 src/Engine.obj: src/Engine.cpp.obj
 
 .PHONY : src/Engine.obj
@@ -258,6 +285,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Asteroids
+	@echo ... src/Bolt.obj
+	@echo ... src/Bolt.i
+	@echo ... src/Bolt.s
 	@echo ... src/Engine.obj
 	@echo ... src/Engine.i
 	@echo ... src/Engine.s
