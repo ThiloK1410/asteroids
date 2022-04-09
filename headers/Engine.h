@@ -2,6 +2,8 @@
 #define ASTEROIDS_ENGINE_H
 
 #include <SFMl/Graphics.hpp>
+#include "Bolt.h"
+#include "Comet.h"
 
 
 class Engine {
@@ -16,6 +18,7 @@ public:
     void run();
     void input();
     void updatePlayer();
+    bool boltCollison(Bolt,Comet);
 };
 
 

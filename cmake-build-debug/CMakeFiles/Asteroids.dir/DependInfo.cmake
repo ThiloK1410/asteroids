@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/thilo/CLionProjects/asteroids/src/Bolt.cpp" "C:/Users/thilo/CLionProjects/asteroids/cmake-build-debug/CMakeFiles/Asteroids.dir/src/Bolt.cpp.obj"
+  "C:/Users/thilo/CLionProjects/asteroids/src/Comet.cpp" "C:/Users/thilo/CLionProjects/asteroids/cmake-build-debug/CMakeFiles/Asteroids.dir/src/Comet.cpp.obj"
   "C:/Users/thilo/CLionProjects/asteroids/src/Engine.cpp" "C:/Users/thilo/CLionProjects/asteroids/cmake-build-debug/CMakeFiles/Asteroids.dir/src/Engine.cpp.obj"
   "C:/Users/thilo/CLionProjects/asteroids/src/Formulas.cpp" "C:/Users/thilo/CLionProjects/asteroids/cmake-build-debug/CMakeFiles/Asteroids.dir/src/Formulas.cpp.obj"
   "C:/Users/thilo/CLionProjects/asteroids/src/Player.cpp" "C:/Users/thilo/CLionProjects/asteroids/cmake-build-debug/CMakeFiles/Asteroids.dir/src/Player.cpp.obj"

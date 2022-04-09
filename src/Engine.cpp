@@ -3,17 +3,19 @@
 #include "Bolt.h"
 #include "Formulas.h"
 #include <iostream>
+#include "Comet.h"
 
 
 Player player;
-sf::Vector2f boltPos ={player.getPosition().x + 50,player.getPosition().y};
+sf::Vector2f boltPos = {player.getPosition().x + 50, player.getPosition().y};
 std::vector<Bolt> boltList;
+std::vector<Comet *> cometList;
 
-bool left,right,up,down, space;
+bool left, right, up, down, space;
 
 Engine::Engine() {
     //resolution = sf::Vector2f(1000,1000);
-    window.create(sf::VideoMode(resolution.x,resolution.y), "Asteroids", sf::Style::Default);
+    window.create(sf::VideoMode(resolution.x, resolution.y), "Asteroids", sf::Style::Default);
     window.setFramerateLimit(FPS);
 }
 
@@ -22,11 +24,14 @@ void Engine::run() {        //main loop, runs until window is closed
         draw();
         input();
         updatePlayer();
-        for(int i=0;i<boltList.size();i++){
+        for (int i = 0; i < boltList.size(); i++) {
             boltList[i].doStep();
-            if(boltList[i].outOfBounds()) {
-                boltList.erase(boltList.cbegin()+i);
+            if (boltList[i].outOfBounds()) {
+                boltList.erase(boltList.cbegin() + i);
             }
+        }
+        for (int i = 0; i < cometList.size(); i++) {
+            cometList[i]->doStep();
         }
     }
 }
@@ -35,8 +40,11 @@ void Engine::draw() {  //everything that needs to be displayed has to be mention
     window.clear(sf::Color::Black); //background color
 
     window.draw(player.getShape());
-    for(int i=0; i<boltList.size();i++) {
+    for (int i = 0; i < boltList.size(); i++) {
         window.draw(boltList[i].getShape());
+    }
+    for (int i = 0; i < cometList.size(); i++) {
+        window.draw(cometList[i]->getShape());
     }
 
     window.display();
@@ -50,36 +58,39 @@ void Engine::input() {
         if (event.type == sf::Event::Closed) window.close();
 
         if (event.type == sf::Event::KeyPressed) {
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
                 up = true;
             }
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
                 space = true;
             }
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
                 left = true;
             }
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
                 right = true;
             }
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
                 down = true;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+                cometList.emplace_back(new Comet());
             }
         }
         if (event.type == sf::Event::KeyReleased) {
-            if(event.key.code == sf::Keyboard::Left){
+            if (event.key.code == sf::Keyboard::Left) {
                 left = false;
             }
-            if(event.key.code == sf::Keyboard::Space){
+            if (event.key.code == sf::Keyboard::Space) {
                 space = false;
             }
-            if(event.key.code == sf::Keyboard::Right) {
+            if (event.key.code == sf::Keyboard::Right) {
                 right = false;
             }
-            if(event.key.code == sf::Keyboard::Up) {
+            if (event.key.code == sf::Keyboard::Up) {
                 up = false;
             }
-            if(event.key.code == sf::Keyboard::Down) {
+            if (event.key.code == sf::Keyboard::Down) {
                 down = false;
             }
         }
@@ -94,28 +105,29 @@ void Engine::updatePlayer() {
     float max_speed = 8;
     float brake_strength = 0.4;
     float fireRate = 0.2;
-    sf::Vector2f scaledMovement ={player.getMovement()->x * factor_1, player.getMovement()->y * factor_1};
+    sf::Vector2f scaledMovement = {player.getMovement()->x * factor_1, player.getMovement()->y * factor_1};
 
 
-    if(left) {
+    if (left) {
         player.rotate(-5);
     }
-    if(right) {
+    if (right) {
         player.rotate(5);
     }
-    if(up) {
+    if (up) {
         sf::Vector2f x = player.getDirection() + scaledMovement;
         *player.getMovement() = *player.getMovement() + x;
     }
-    if(down) {
-        double brake_factor = (Formulas::getVectorLength(new_movement)-brake_strength)/Formulas::getVectorLength(new_movement);
+    if (down) {
+        double brake_factor =
+                (Formulas::getVectorLength(new_movement) - brake_strength) / Formulas::getVectorLength(new_movement);
         new_movement.x *= brake_factor;
         new_movement.y *= brake_factor;
-        *player.getMovement()=new_movement;
+        *player.getMovement() = new_movement;
     }
-    if(space) {
+    if (space) {
         sf::Time boltCooldown = clock.getElapsedTime();
-        if(boltCooldown.asSeconds()>fireRate) {
+        if (boltCooldown.asSeconds() > fireRate) {
             clock.restart();
             Bolt bolt(player.getPosition(), player.getDirection());
             boltList.push_back(bolt);
@@ -123,23 +135,30 @@ void Engine::updatePlayer() {
     }
 
     //holding the speed below max_speed
-    if(Formulas::getVectorLength(*player.getMovement()) > max_speed){
+    if (Formulas::getVectorLength(*player.getMovement()) > max_speed) {
         double factor = max_speed / Formulas::getVectorLength(*player.getMovement());
         new_movement.x = new_movement.x * factor;
         new_movement.y = new_movement.y * factor;
-        *player.getMovement()=new_movement;
+        *player.getMovement() = new_movement;
     }
 
-    if ( new_position.x > screen_size.x && new_movement.x > 0) {
+    if (new_position.x > screen_size.x && new_movement.x > 0) {
         new_position.x = 0;
-    }if (new_position.x < 0 && new_movement.x < 0 ) {
+    }
+    if (new_position.x < 0 && new_movement.x < 0) {
         new_position.x = screen_size.x;
-    }if (new_position.y > screen_size.y && new_movement.y > 0 ) {
+    }
+    if (new_position.y > screen_size.y && new_movement.y > 0) {
         new_position.y = 0;
-    }if (new_position.y < 0 && new_movement.y <0) {
+    }
+    if (new_position.y < 0 && new_movement.y < 0) {
         new_position.y = screen_size.y;
     }
 
-    player.setPosition(new_position+new_movement);
+    player.setPosition(new_position + new_movement);
+}
+
+bool Engine::boltCollison(Bolt bolt, Comet comet) {
+    return false;
 }
 

@@ -13,10 +13,9 @@ Bolt::Bolt(sf::Vector2f pos,sf::Vector2f dir) {
     player_shape.setPoint(1,sf::Vector2f(3,0));
     player_shape.setPoint(2,sf::Vector2f(3,20));
     player_shape.setPoint(3,sf::Vector2f(0,20));
-    player_shape.setOrigin(2,10);
+    player_shape.setOrigin(2,0);
     player_shape.setRotation(atanf(dir.y/dir.x)*180/M_PI+90);
     boltSpeed = 15;
-    std::cout << player_shape.getRotation() <<std::endl;
     position = pos;
     direction = dir;
 }
@@ -41,4 +40,8 @@ sf::Vector2f Bolt::getPosition() {
 
 bool Bolt::outOfBounds() {
     return isOutOfBounds;
+}
+
+sf::Vector2f Bolt::getDirection() {
+    return direction;
 }

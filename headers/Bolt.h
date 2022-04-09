@@ -22,7 +22,7 @@ public:
     void doStep();
     void setPosition(sf::Vector2f);
     sf::Vector2f getPosition();
-
+    sf::Vector2f getDirection();
 };
 
 

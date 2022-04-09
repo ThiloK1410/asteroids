@@ -10,9 +10,19 @@
 SFML/Graphics/ConvexShape.hpp
 -
 
+../headers/Comet.h
+SFML/Graphics.hpp
+-
+Bolt.h
+../headers/Bolt.h
+
 ../headers/Engine.h
 SFMl/Graphics.hpp
 -
+Bolt.h
+../headers/Bolt.h
+Comet.h
+../headers/Comet.h
 
 ../headers/Formulas.h
 SFML/Graphics.hpp
@@ -692,6 +702,28 @@ SFML/Config.hpp
 
 C:/SFML/include/SFML/Window/WindowStyle.hpp
 
+C:/Users/thilo/CLionProjects/asteroids/src/Bolt.cpp
+Bolt.h
+C:/Users/thilo/CLionProjects/asteroids/src/Bolt.h
+Engine.h
+C:/Users/thilo/CLionProjects/asteroids/src/Engine.h
+cmath
+-
+iostream
+-
+
+C:/Users/thilo/CLionProjects/asteroids/src/Comet.cpp
+Comet.h
+C:/Users/thilo/CLionProjects/asteroids/src/Comet.h
+Engine.h
+C:/Users/thilo/CLionProjects/asteroids/src/Engine.h
+time.h
+-
+Formulas.h
+C:/Users/thilo/CLionProjects/asteroids/src/Formulas.h
+Engine.h
+C:/Users/thilo/CLionProjects/asteroids/src/Engine.h
+
 C:/Users/thilo/CLionProjects/asteroids/src/Engine.cpp
 Engine.h
 C:/Users/thilo/CLionProjects/asteroids/src/Engine.h
@@ -703,4 +735,10 @@ Formulas.h
 C:/Users/thilo/CLionProjects/asteroids/src/Formulas.h
 iostream
 -
+Comet.h
+C:/Users/thilo/CLionProjects/asteroids/src/Comet.h
+
+C:/Users/thilo/CLionProjects/asteroids/src/main.cpp
+Engine.h
+C:/Users/thilo/CLionProjects/asteroids/src/Engine.h
 

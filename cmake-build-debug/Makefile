@@ -168,6 +168,33 @@ src/Bolt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Bolt.cpp.s
 .PHONY : src/Bolt.cpp.s
 
+src/Comet.obj: src/Comet.cpp.obj
+
+.PHONY : src/Comet.obj
+
+# target to build an object file
+src/Comet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Comet.cpp.obj
+.PHONY : src/Comet.cpp.obj
+
+src/Comet.i: src/Comet.cpp.i
+
+.PHONY : src/Comet.i
+
+# target to preprocess a source file
+src/Comet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Comet.cpp.i
+.PHONY : src/Comet.cpp.i
+
+src/Comet.s: src/Comet.cpp.s
+
+.PHONY : src/Comet.s
+
+# target to generate assembly for a file
+src/Comet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Asteroids.dir\build.make CMakeFiles/Asteroids.dir/src/Comet.cpp.s
+.PHONY : src/Comet.cpp.s
+
 src/Engine.obj: src/Engine.cpp.obj
 
 .PHONY : src/Engine.obj
@@ -288,6 +315,9 @@ help:
 	@echo ... src/Bolt.obj
 	@echo ... src/Bolt.i
 	@echo ... src/Bolt.s
+	@echo ... src/Comet.obj
+	@echo ... src/Comet.i
+	@echo ... src/Comet.s
 	@echo ... src/Engine.obj
 	@echo ... src/Engine.i
 	@echo ... src/Engine.s

@@ -89,6 +89,9 @@
 		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/headers/Bolt.h">
 			<Option target="Asteroids"/>
 		</Unit>
+		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/headers/Comet.h">
+			<Option target="Asteroids"/>
+		</Unit>
 		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/headers/Engine.h">
 			<Option target="Asteroids"/>
 		</Unit>
@@ -99,6 +102,9 @@
 			<Option target="Asteroids"/>
 		</Unit>
 		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/src/Bolt.cpp">
+			<Option target="Asteroids"/>
+		</Unit>
+		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/src/Comet.cpp">
 			<Option target="Asteroids"/>
 		</Unit>
 		<Unit filename="C:/Users/thilo/CLionProjects/asteroids/src/Engine.cpp">
