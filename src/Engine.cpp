@@ -20,6 +20,12 @@ Engine::Engine() {
 }
 
 void Engine::run() {        //main loop, runs until window is closed
+
+    std::vector<std::vector<float>> m = {{0,0},{2,1}};
+    std::vector<float> b = {3,0};
+    std::vector<float> x = Formulas::gaussianElimination(m,b);
+    std::cout << x[0] << "   " << x[1] << "   " << std::endl;
+
     while (window.isOpen()) {
         draw();
         input();
@@ -158,7 +164,7 @@ void Engine::updatePlayer() {
     player.setPosition(new_position + new_movement);
 }
 
-bool Engine::boltCollison(Bolt bolt, Comet comet) {
+bool Engine::boltCollison(Bolt bolt, Comet comet) {  //TODO
     return false;
 }
 

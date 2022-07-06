@@ -4,6 +4,7 @@
 
 #include "Formulas.h"
 #include <cmath>
+#include <iostream>
 
 struct Line {
     sf::Vector2f position;
@@ -14,21 +15,6 @@ struct Line {
         direction = pos2 - pos1;
     }
 
-    bool collisionWith(Line x) {
-        // 1:   position
-        // 2:   direction
-        // 3:   x.position
-        // 4:   x.direction
-        // TODO: dividents cant be 0 so there needs to be a exception, also t,s needs to be initialized
-        float intersectionX = (x.position.x - position.x) / direction.x +
-                              ((x.position.y - position.y) * direction.x - (x.position.x - position.x) * direction.y) /
-                              ((1 - (x.direction.y * direction.x) / (x.direction.x * direction.y)) *
-                              (direction.x * direction.y));
-        float intersectionY = ((x.position.y - position.y) * direction.x - (x.position.x-position.x)*direction.y) /
-                                (-(x.direction.y*direction.x)+ (x.direction.x*direction.y));
-        float t,s;
-        if(t>=0 && t<=1 && s >=0 && s<=1) return true;
-    }
 };
 
 void Formulas::rotateVector(sf::Vector2f &vector, float degrees) {
@@ -67,5 +53,43 @@ sf::Vector2f Formulas::multiplyVectorWithFactor(sf::Vector2f vector, float x) {
 bool Formulas::lineIntersectLine(sf::Vector2f p11, sf::Vector2f p12, sf::Vector2f p21, sf::Vector2f p22) {
     Line first(p11, p12);
     Line second(p21, p22);
+}
+
+std::vector<float> Formulas::gaussianElimination(std::vector<std::vector<float>> A, std::vector<float> b) {  //Ax = b : returns x
+    if(!(A.size()==b.size() && b.size()==A[0].size()))
+        std::cout << "@gaussianElimination: input not usable for gaussian elimination" << std::endl;
+
+    std::vector<float> x (b.size());
+
+    for(int i = 0;i<A.size();i++) {  //changing rows so the diagonal is !=0
+        if(A[i][i]==0) {
+            for(int j = 0;j<A.size();j++) {
+                if(A[j][i]!=0) {
+                    std::vector<float> temp = A[i];
+                    A[i] = A[j];
+                    A[j] = temp;
+                }
+            }
+        }
+    }
+
+    for(int i = 0;i<A.size();i++) { //iterates through rows
+        float x1 = A[i][i];
+        for( int j = i;j<A.size();j++) { // iterates through columns starting at the diagonal
+            A[i][j] = A[i][j] / x1;  // bringing diagonal down to 1
+        }
+        b[i] = b[i] / x1;
+        for(int j = 0;j<A.size();j++) { //iterates through rows except for A[i]  --
+            if(j==i) continue;
+            float x2 = A[j][i];
+            for(int k=0;k<A.size();k++){ //iterates through columns
+                A[j][k] = A[j][k] - x2*A[i][k];
+            }
+            b[j] = b[j] - x2*b[i];
+        }
+    }
+
+    x = b;
+    return x;
 }
 

@@ -14,6 +14,7 @@ public:
     static void normalizeVector(sf::Vector2f &);
     static sf::Vector2f multiplyVectorWithFactor(sf:: Vector2f ,float);
     static bool lineIntersectLine(sf::Vector2f,sf::Vector2f,sf::Vector2f,sf::Vector2f);
+    static std::vector<float> gaussianElimination(std::vector<std::vector<float>>,std::vector<float>);
 };
 
 
