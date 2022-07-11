@@ -9,7 +9,7 @@
 Player player;
 sf::Vector2f boltPos = {player.getPosition().x + 50, player.getPosition().y};
 std::vector<Bolt> boltList;
-std::vector<Comet *> cometList;
+std::vector<Comet> cometList;
 
 bool left, right, up, down, space;
 
@@ -21,15 +21,11 @@ Engine::Engine() {
 
 void Engine::run() {        //main loop, runs until window is closed
 
-    std::vector<std::vector<float>> m = {{0,0},{2,1}};
-    std::vector<float> b = {3,0};
-    std::vector<float> x = Formulas::gaussianElimination(m,b);
-    std::cout << x[0] << "   " << x[1] << "   " << std::endl;
-
     while (window.isOpen()) {
         draw();
         input();
         updatePlayer();
+        //checkCollision();
         for (int i = 0; i < boltList.size(); i++) {
             boltList[i].doStep();
             if (boltList[i].outOfBounds()) {
@@ -37,7 +33,7 @@ void Engine::run() {        //main loop, runs until window is closed
             }
         }
         for (int i = 0; i < cometList.size(); i++) {
-            cometList[i]->doStep();
+            cometList[i].doStep();
         }
     }
 }
@@ -50,7 +46,7 @@ void Engine::draw() {  //everything that needs to be displayed has to be mention
         window.draw(boltList[i].getShape());
     }
     for (int i = 0; i < cometList.size(); i++) {
-        window.draw(cometList[i]->getShape());
+        window.draw(cometList[i].getShape());
     }
 
     window.display();
@@ -164,7 +160,18 @@ void Engine::updatePlayer() {
     player.setPosition(new_position + new_movement);
 }
 
-bool Engine::boltCollison(Bolt bolt, Comet comet) {  //TODO
-    return false;
+void Engine::checkCollision() {
+    for(int i=0; i<boltList.size(); i++){
+        for(int j=0; j<cometList.size(); j++){
+            sf::ConvexShape x = boltList[i].getShape();
+            sf::ConvexShape y = cometList[j].getShape();
+            if(Formulas::convexShapeIntersectConvexShape(x,y)) {
+                auto itBolt = boltList.cbegin();
+                auto itComet = cometList.cbegin();
+                boltList.erase(itBolt+i);
+                cometList.erase(itComet+j);
+            }
+        }
+    }
 }
 

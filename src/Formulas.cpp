@@ -6,7 +6,7 @@
 #include <cmath>
 #include <iostream>
 
-struct Line {
+struct Formulas::Line  {
     sf::Vector2f position;
     sf::Vector2f direction;
 
@@ -51,8 +51,11 @@ sf::Vector2f Formulas::multiplyVectorWithFactor(sf::Vector2f vector, float x) {
 }
 
 bool Formulas::lineIntersectLine(sf::Vector2f p11, sf::Vector2f p12, sf::Vector2f p21, sf::Vector2f p22) {
-    Line first(p11, p12);
-    Line second(p21, p22);
+    std::vector<std::vector<float>> A = {{p12.x-p11.x, -(p22.x-p21.x)} , {p12.y-p11.y, -(p22.y-p21.y)}};
+    std::vector<float> b = {p11.x-p21.x, p11.y-p21.y};
+    std::vector<float> x = gaussianElimination(A,b);
+    if(x[0]>=0 && x[0] <= 1 && x[1]>=0 && x[1] <= 1) return true;
+    return false;
 }
 
 std::vector<float> Formulas::gaussianElimination(std::vector<std::vector<float>> A, std::vector<float> b) {  //Ax = b : returns x
@@ -93,3 +96,16 @@ std::vector<float> Formulas::gaussianElimination(std::vector<std::vector<float>>
     return x;
 }
 
+bool Formulas::convexShapeIntersectLine( sf::ConvexShape &shape, sf::Vector2f p1, sf::Vector2f p2) {
+    for(int i=1; i<=shape.getPointCount(); i++){
+        if(lineIntersectLine(shape.getPoint(i),shape.getPoint((i+1)%shape.getPointCount()),p1, p2)) return true;
+    }
+    return false;
+}
+
+bool Formulas::convexShapeIntersectConvexShape(sf::ConvexShape &shape1, sf::ConvexShape &shape2) {
+    for(int j=1; j<=shape1.getPointCount(); j++) {
+        if(convexShapeIntersectLine(shape2,shape1.getPoint(j),shape1.getPoint((j+1)%shape1.getPointCount()))) return true;
+    }
+    return false;
+}

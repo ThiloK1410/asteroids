@@ -18,7 +18,7 @@ public:
     void run();
     void input();
     void updatePlayer();
-    bool boltCollison(Bolt,Comet);
+    void checkCollision();
 };
 
 

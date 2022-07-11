@@ -20,7 +20,6 @@ public:
     sf::Vector2f getPosition();
     sf::Vector2f getDirection();
     void doStep();
-    bool isHit(std::vector<Bolt>);
 };
 
 

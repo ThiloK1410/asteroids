@@ -117,17 +117,4 @@ void Comet::doStep() {
     comet_shape.setPosition(position);
 }
 
-bool Comet::isHit(std::vector<Bolt> boltList) {
-    for (int i = 0; i < boltList.size(); i++) {
-        for (int j = 0; j < comet_shape.getPointCount(); j++) {
-            if (Formulas::lineIntersectLine(boltList[i].getPosition(),
-                                            boltList[i].getPosition() - boltList[i].getDirection(),
-                                            comet_shape.getPoint(j),
-                                            comet_shape.getPoint((j + 1) % comet_shape.getPointCount()))){
-                return true;
-            }
-        }
-    }
-    return false;
-}
 

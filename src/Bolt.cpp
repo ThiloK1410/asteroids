@@ -1,6 +1,3 @@
-//
-// Created by thilo on 26.03.2022.
-//
 
 #include "Bolt.h"
 #include "Engine.h"
